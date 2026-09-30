@@ -100,16 +100,28 @@ def main():
         start = time.perf_counter()
         model = TextEmbedding(model_name="BAAI/bge-small-en-v1.5", cache_dir=a.dense_cache)
         vecs = np.array(list(model.embed(texts, batch_size=64)), dtype=np.float32)
-        qvecs = np.array(list(model.query_embed([queries[q] for q in queryids])), dtype=np.float32)
+        indexing["dense_s"] = time.perf_counter() - start
+        qencode_ms = []
+        qvecs_list = []
+        for qid in queryids:
+            qstart = time.perf_counter()
+            qvecs_list.append(list(model.query_embed([queries[qid]]))[0])
+            qencode_ms.append((time.perf_counter() - qstart) * 1000)
+        qvecs = np.array(qvecs_list, dtype=np.float32)
         vecs /= np.maximum(np.linalg.norm(vecs, axis=1, keepdims=True), 1e-12)
         qvecs /= np.maximum(np.linalg.norm(qvecs, axis=1, keepdims=True), 1e-12)
-        indexing["dense_s"] = time.perf_counter() - start
         dense_scores = []
         def dense_scorer(i):
             scores = vecs @ qvecs[i]
             dense_scores.append(scores)
             return scores
         rank_and_record("bge-small", dense_scorer, docids, queryids, qrels, records)
+        qencode_by_id = dict(zip(queryids, qencode_ms))
+        for row in records:
+            if row["method"] == "bge-small":
+                row["latency_ms"] += qencode_by_id[row["query_id"]]
+        tfidf_latency = {r["query_id"]: r["latency_ms"] for r in records if r["method"] == "tfidf"}
+        dense_latency = {r["query_id"]: r["latency_ms"] for r in records if r["method"] == "bge-small"}
         for qi, qid in enumerate(queryids):
             start = time.perf_counter()
             b_rank = np.argsort(-tfidf_scores[qi], kind="stable")
@@ -120,7 +132,8 @@ def main():
             order = np.argsort(-scores, kind="stable")[:10]
             elapsed = (time.perf_counter() - start) * 1000
             rank = [docids[x] for x in order]
-            records.append({"method": "tfidf+bge-rrf", "query_id": qid, "latency_ms": elapsed,
+            records.append({"method": "tfidf+bge-rrf", "query_id": qid,
+                            "latency_ms": elapsed + tfidf_latency[qid] + dense_latency[qid],
                             "ranked_ids": rank, **metrics(rank, qrels[qid])})
 
     summary = {}

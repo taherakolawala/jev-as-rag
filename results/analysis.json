@@ -1,0 +1,242 @@
+{
+  "scifact": {
+    "documents": 5183,
+    "sampled_queries": 20,
+    "methods": {
+      "bge-small": {
+        "n": 20,
+        "hit5": 0.7,
+        "hits": 14,
+        "recall5": 0.7,
+        "mrr10": 0.5979166666666667,
+        "mean_latency_ms": 9.026395001274068,
+        "p95_latency_ms": 11.121254997851793,
+        "latency_interruptions": 0
+      },
+      "bm25": {
+        "n": 20,
+        "hit5": 0.75,
+        "hits": 15,
+        "recall5": 0.725,
+        "mrr10": 0.44797619047619053,
+        "mean_latency_ms": 1.8826399984391173,
+        "p95_latency_ms": 2.683344999604742,
+        "latency_interruptions": 0
+      },
+      "tfidf": {
+        "n": 20,
+        "hit5": 0.5,
+        "hits": 10,
+        "recall5": 0.5,
+        "mrr10": 0.4000595238095238,
+        "mean_latency_ms": 13.862365000022692,
+        "p95_latency_ms": 21.295280000776987,
+        "latency_interruptions": 0
+      },
+      "tfidf+bge-rrf": {
+        "n": 20,
+        "hit5": 0.7,
+        "hits": 14,
+        "recall5": 0.7,
+        "mrr10": 0.5381944444444444,
+        "mean_latency_ms": 24.035805001403787,
+        "p95_latency_ms": 31.932339995182705,
+        "latency_interruptions": 0
+      },
+      "jev_full": {
+        "n": 20,
+        "hit5": 0.9,
+        "hits": 18,
+        "recall5": 0.9,
+        "mrr10": 0.760892857142857,
+        "mean_latency_ms": 8670.097545001045,
+        "p95_latency_ms": 11927.538900004947,
+        "latency_interruptions": 0,
+        "total_cost_usd": 1.687099764,
+        "cost_per_query_usd": 0.08435498820000001,
+        "calls_per_query": 194.0,
+        "input_tokens_per_query": 2008452.1
+      },
+      "bm25+jev": {
+        "n": 20,
+        "hit5": 0.9,
+        "hits": 18,
+        "recall5": 0.875,
+        "mrr10": 0.6791666666666667,
+        "mean_latency_ms": 765.3401100003975,
+        "p95_latency_ms": 860.7375500007038,
+        "latency_interruptions": 0,
+        "total_cost_usd": 0.033946962000000004,
+        "cost_per_query_usd": 0.0016973481000000003,
+        "calls_per_query": 5.0,
+        "input_tokens_per_query": 40413.05
+      },
+      "bm25+minilm": {
+        "n": 20,
+        "hit5": 0.65,
+        "hits": 13,
+        "recall5": 0.625,
+        "mrr10": 0.5388888888888889,
+        "mean_latency_ms": 9195.200200000181,
+        "p95_latency_ms": 11745.23874500046,
+        "latency_interruptions": 0
+      }
+    },
+    "paired_full_minus_bm25": {
+      "difference": 0.15,
+      "ci95": [
+        -0.05,
+        0.35
+      ],
+      "wins": 4,
+      "losses": 1,
+      "ties": 15
+    },
+    "paired_full_minus_hybrid": {
+      "difference": 0.0,
+      "ci95": [
+        -0.15,
+        0.15
+      ],
+      "wins": 1,
+      "losses": 1,
+      "ties": 18
+    },
+    "candidate_recall_bm25_100": 0.875
+  },
+  "nfcorpus": {
+    "documents": 3633,
+    "sampled_queries": 20,
+    "methods": {
+      "bm25": {
+        "n": 20,
+        "hit5": 0.7,
+        "hits": 14,
+        "recall5": 0.05409254168116816,
+        "mrr10": 0.6029761904761904,
+        "mean_latency_ms": 0.3267000000050757,
+        "p95_latency_ms": 0.5926900030317485,
+        "latency_interruptions": 0
+      },
+      "tfidf": {
+        "n": 20,
+        "hit5": 0.65,
+        "hits": 13,
+        "recall5": 0.05650950667062229,
+        "mrr10": 0.5921428571428571,
+        "mean_latency_ms": 4.594804999578628,
+        "p95_latency_ms": 5.44558499896084,
+        "latency_interruptions": 0
+      },
+      "jev_full": {
+        "n": 20,
+        "hit5": 0.65,
+        "hits": 13,
+        "recall5": 0.058541730725507855,
+        "mrr10": 0.47714285714285715,
+        "mean_latency_ms": 6325.476239999989,
+        "p95_latency_ms": 6963.78327500279,
+        "latency_interruptions": 0,
+        "total_cost_usd": 1.25250762,
+        "cost_per_query_usd": 0.062625381,
+        "calls_per_query": 136.0,
+        "input_tokens_per_query": 1491080.5
+      },
+      "bm25+jev": {
+        "n": 20,
+        "hit5": 0.7,
+        "hits": 14,
+        "recall5": 0.056788548940188734,
+        "mrr10": 0.525,
+        "mean_latency_ms": 747.2498249986529,
+        "p95_latency_ms": 845.1701550060534,
+        "latency_interruptions": 0,
+        "total_cost_usd": 0.03470439,
+        "cost_per_query_usd": 0.0017352195,
+        "calls_per_query": 5.0,
+        "input_tokens_per_query": 41314.75
+      },
+      "bm25+minilm": {
+        "n": 20,
+        "hit5": 0.7,
+        "hits": 14,
+        "recall5": 0.06481708295342783,
+        "mrr10": 0.6416666666666666,
+        "mean_latency_ms": 9062.81260999931,
+        "p95_latency_ms": 10414.286394996088,
+        "latency_interruptions": 0
+      }
+    },
+    "paired_full_minus_bm25": {
+      "difference": -0.05,
+      "ci95": [
+        -0.2,
+        0.1
+      ],
+      "wins": 1,
+      "losses": 2,
+      "ties": 17
+    },
+    "paired_full_minus_hybrid": {
+      "difference": -0.05,
+      "ci95": [
+        -0.15,
+        0.0
+      ],
+      "wins": 0,
+      "losses": 1,
+      "ties": 19
+    },
+    "candidate_recall_bm25_100": 0.14904327380839105
+  },
+  "scifact_variants": {
+    "keep1": {
+      "n": 20,
+      "hit5": 0.75,
+      "hits": 15,
+      "recall5": 0.75,
+      "mrr10": 0.675,
+      "mean_latency_ms": 7614.210447367728,
+      "p95_latency_ms": 8887.14944000021,
+      "latency_interruptions": 1,
+      "total_cost_usd": 1.4692177080000002,
+      "cost_per_query_usd": 0.07346088540000001,
+      "calls_per_query": 169.0,
+      "input_tokens_per_query": 1749068.7,
+      "paired_minus_keep5_seed1": {
+        "difference": -0.15,
+        "ci95": [
+          -0.3,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 3,
+        "ties": 17
+      }
+    },
+    "keep5_seed2": {
+      "n": 20,
+      "hit5": 0.85,
+      "hits": 17,
+      "recall5": 0.85,
+      "mrr10": 0.6713095238095238,
+      "mean_latency_ms": 8786.991599999965,
+      "p95_latency_ms": 9786.099979999199,
+      "latency_interruptions": 0,
+      "total_cost_usd": 1.687300272,
+      "cost_per_query_usd": 0.08436501360000001,
+      "calls_per_query": 194.0,
+      "input_tokens_per_query": 2008690.8,
+      "paired_minus_keep5_seed1": {
+        "difference": -0.05,
+        "ci95": [
+          -0.15,
+          0.0
+        ],
+        "wins": 0,
+        "losses": 1,
+        "ties": 19
+      }
+    }
+  }
+}

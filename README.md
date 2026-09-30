@@ -6,7 +6,7 @@ Reproducible experiments on whether a round-based Jev tournament can retrieve re
 
 For each query, randomly partition the entire corpus into groups of 32 documents. Each Jev `Choice` call sees the query and the title plus the first 1,600 characters of each abstract as its options. Retain the five highest-probability documents from each group, regroup, and repeat until a final group produces the ranking. The documented `Choice` output includes a probability for every option, allowing more than one survivor per group. This experiment also tests a one-survivor variant and alternate random groupings.
 
-The comparison methods are BM25, word/bigram TF-IDF, BGE-small dense embedding retrieval, reciprocal-rank fusion, and BM25 top-100 followed by the same Jev tournament. All retrieval metrics use the official BEIR test qrels. Indexing time is separate from query latency. Jev cost is calculated from returned input-token usage at TypeSafe's published $0.042 per million input tokens. Local baseline costs exclude hardware and electricity.
+The comparison methods are BM25, word/bigram TF-IDF, BGE-small dense embedding retrieval, reciprocal-rank fusion, BM25 top-100 followed by the same Jev tournament, and an open MiniLM cross-encoder on BM25's top 100. All retrieval metrics use the official BEIR test qrels. Indexing time is separate from query latency. Jev cost is calculated from returned input-token usage at TypeSafe's published $0.042 per million input tokens. Local baseline costs exclude hardware and electricity.
 
 ## Data
 
@@ -26,6 +26,7 @@ Put a TypeSafe API key in a one-line file **outside this repository**. For examp
 ```sh
 python jev_tournament.py --data data/scifact --key-file ../typesafe_api_key.txt --queries 20 --max-cost 5 --output results/raw/jev_full20.json
 python jev_tournament.py --data data/scifact --key-file ../typesafe_api_key.txt --queries 20 --candidate-source bm25 --candidate-k 100 --max-cost 1 --output results/raw/jev_bm25_100.json
+python open_reranker.py --data data/scifact --jev-run results/scifact_jev_full20.json --output results/scifact_bm25_minilm20.json
 ```
 
 `--query-seed` fixes which labeled queries are sampled. `--seed` fixes grouping and can be varied independently. Raw result files are checkpointed after every query and excluded from Git. The published `results/` files contain sanitized run records and the summary.

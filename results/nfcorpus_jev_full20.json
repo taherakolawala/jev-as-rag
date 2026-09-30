@@ -1,0 +1,616 @@
+{
+  "config": {
+    "dataset": "BEIR nfcorpus test",
+    "model": "jev-1.13.0",
+    "query_ids": [
+      "PLAIN-3281",
+      "PLAIN-2981",
+      "PLAIN-997",
+      "PLAIN-2102",
+      "PLAIN-2520",
+      "PLAIN-3452",
+      "PLAIN-3063",
+      "PLAIN-112",
+      "PLAIN-1249",
+      "PLAIN-68",
+      "PLAIN-2364",
+      "PLAIN-3302",
+      "PLAIN-761",
+      "PLAIN-3131",
+      "PLAIN-1141",
+      "PLAIN-1203",
+      "PLAIN-344",
+      "PLAIN-143",
+      "PLAIN-1887",
+      "PLAIN-913"
+    ],
+    "group_size": 32,
+    "keep": 5,
+    "workers": 12,
+    "seed": 20260930,
+    "candidate_source": "all",
+    "candidate_k": 3633
+  },
+  "per_query": [
+    {
+      "query_id": "PLAIN-3281",
+      "ranked_ids": [
+        "MED-4909",
+        "MED-3497",
+        "MED-1839",
+        "MED-3087",
+        "MED-1841",
+        "MED-1851",
+        "MED-2906",
+        "MED-1838",
+        "MED-1852",
+        "MED-1597"
+      ],
+      "wall_ms": 6706.19810000062,
+      "calls": 136,
+      "input_tokens": 1489948,
+      "cost_usd": 0.06257781600000001,
+      "mean_call_ms": 470.69013529428906,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.038461538461538464,
+      "recall10": 0.038461538461538464,
+      "mrr10": 1.0
+    },
+    {
+      "query_id": "PLAIN-2981",
+      "ranked_ids": [
+        "MED-4403",
+        "MED-4742",
+        "MED-4546",
+        "MED-3087",
+        "MED-5171",
+        "MED-1420",
+        "MED-3171",
+        "MED-1778",
+        "MED-4746",
+        "MED-3182"
+      ],
+      "wall_ms": 6819.906800003082,
+      "calls": 136,
+      "input_tokens": 1481618,
+      "cost_usd": 0.062227956,
+      "mean_call_ms": 469.1858904411942,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.14285714285714285,
+      "recall10": 0.14285714285714285,
+      "mrr10": 1.0
+    },
+    {
+      "query_id": "PLAIN-997",
+      "ranked_ids": [
+        "MED-4733",
+        "MED-1114",
+        "MED-2256",
+        "MED-5094",
+        "MED-3622",
+        "MED-4913",
+        "MED-5369",
+        "MED-1531",
+        "MED-745",
+        "MED-1634"
+      ],
+      "wall_ms": 6103.752299997723,
+      "calls": 136,
+      "input_tokens": 1476392,
+      "cost_usd": 0.062008464000000006,
+      "mean_call_ms": 423.0950639711784,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 0,
+      "recall5": 0.0,
+      "recall10": 0.0,
+      "mrr10": 0.0
+    },
+    {
+      "query_id": "PLAIN-2102",
+      "ranked_ids": [
+        "MED-3033",
+        "MED-5299",
+        "MED-1680",
+        "MED-3046",
+        "MED-3318",
+        "MED-2306",
+        "MED-1603",
+        "MED-5293",
+        "MED-4821",
+        "MED-2237"
+      ],
+      "wall_ms": 5690.353199999663,
+      "calls": 136,
+      "input_tokens": 1504271,
+      "cost_usd": 0.063179382,
+      "mean_call_ms": 396.96276617611574,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 1,
+      "recall5": 0.007125890736342043,
+      "recall10": 0.014251781472684086,
+      "mrr10": 0.3333333333333333
+    },
+    {
+      "query_id": "PLAIN-2520",
+      "ranked_ids": [
+        "MED-821",
+        "MED-3815",
+        "MED-2148",
+        "MED-3273",
+        "MED-5225",
+        "MED-1445",
+        "MED-2502",
+        "MED-2943",
+        "MED-1724",
+        "MED-4347"
+      ],
+      "wall_ms": 6005.244100000709,
+      "calls": 136,
+      "input_tokens": 1501002,
+      "cost_usd": 0.063042084,
+      "mean_call_ms": 414.5194764706128,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 0,
+      "recall5": 0.0,
+      "recall10": 0.0410958904109589,
+      "mrr10": 0.14285714285714285
+    },
+    {
+      "query_id": "PLAIN-3452",
+      "ranked_ids": [
+        "MED-1040",
+        "MED-1048",
+        "MED-5175",
+        "MED-3904",
+        "MED-4810",
+        "MED-4638",
+        "MED-949",
+        "MED-4640",
+        "MED-4325",
+        "MED-1035"
+      ],
+      "wall_ms": 5864.603900001384,
+      "calls": 136,
+      "input_tokens": 1489101,
+      "cost_usd": 0.062542242,
+      "mean_call_ms": 410.15852941173387,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 1,
+      "recall5": 0.058823529411764705,
+      "recall10": 0.17647058823529413,
+      "mrr10": 0.3333333333333333
+    },
+    {
+      "query_id": "PLAIN-3063",
+      "ranked_ids": [
+        "MED-3946",
+        "MED-2951",
+        "MED-4689",
+        "MED-2925",
+        "MED-5083",
+        "MED-4712",
+        "MED-4523",
+        "MED-2886",
+        "MED-3942",
+        "MED-2888"
+      ],
+      "wall_ms": 6600.798500003293,
+      "calls": 136,
+      "input_tokens": 1493969,
+      "cost_usd": 0.062746698,
+      "mean_call_ms": 456.7552404411318,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 0,
+      "recall5": 0.0,
+      "recall10": 0.0,
+      "mrr10": 0.0
+    },
+    {
+      "query_id": "PLAIN-112",
+      "ranked_ids": [
+        "MED-5062",
+        "MED-3382",
+        "MED-3380",
+        "MED-5063",
+        "MED-2662",
+        "MED-2303",
+        "MED-3381",
+        "MED-1153",
+        "MED-1150",
+        "MED-1725"
+      ],
+      "wall_ms": 6008.727300002647,
+      "calls": 136,
+      "input_tokens": 1483987,
+      "cost_usd": 0.062327454000000004,
+      "mean_call_ms": 415.05395367633304,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.07142857142857142,
+      "recall10": 0.08928571428571429,
+      "mrr10": 1.0
+    },
+    {
+      "query_id": "PLAIN-1249",
+      "ranked_ids": [
+        "MED-3292",
+        "MED-1752",
+        "MED-3309",
+        "MED-1743",
+        "MED-913",
+        "MED-1750",
+        "MED-1745",
+        "MED-1746",
+        "MED-1744",
+        "MED-2204"
+      ],
+      "wall_ms": 5832.463499995356,
+      "calls": 136,
+      "input_tokens": 1480475,
+      "cost_usd": 0.062179950000000005,
+      "mean_call_ms": 408.41271029405425,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 0,
+      "recall5": 0.0,
+      "recall10": 0.0,
+      "mrr10": 0.0
+    },
+    {
+      "query_id": "PLAIN-68",
+      "ranked_ids": [
+        "MED-2991",
+        "MED-4299",
+        "MED-4493",
+        "MED-4727",
+        "MED-1196",
+        "MED-4746",
+        "MED-3089",
+        "MED-3092",
+        "MED-3085",
+        "MED-3499"
+      ],
+      "wall_ms": 6726.648399999249,
+      "calls": 136,
+      "input_tokens": 1495671,
+      "cost_usd": 0.062818182,
+      "mean_call_ms": 469.8728507355019,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.01818181818181818,
+      "recall10": 0.09090909090909091,
+      "mrr10": 1.0
+    },
+    {
+      "query_id": "PLAIN-2364",
+      "ranked_ids": [
+        "MED-3751",
+        "MED-2721",
+        "MED-5004",
+        "MED-2226",
+        "MED-4261",
+        "MED-5284",
+        "MED-3691",
+        "MED-4287",
+        "MED-1224",
+        "MED-4291"
+      ],
+      "wall_ms": 5940.3824000037275,
+      "calls": 136,
+      "input_tokens": 1499505,
+      "cost_usd": 0.06297921000000001,
+      "mean_call_ms": 408.54487867636635,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 0,
+      "recall5": 0.0,
+      "recall10": 0.0,
+      "mrr10": 0.0
+    },
+    {
+      "query_id": "PLAIN-3302",
+      "ranked_ids": [
+        "MED-3783",
+        "MED-2030",
+        "MED-3788",
+        "MED-4811",
+        "MED-4958",
+        "MED-2496",
+        "MED-5320",
+        "MED-2678",
+        "MED-723",
+        "MED-5140"
+      ],
+      "wall_ms": 6061.160099998233,
+      "calls": 136,
+      "input_tokens": 1489034,
+      "cost_usd": 0.06253942800000001,
+      "mean_call_ms": 426.38489852983827,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 0,
+      "recall5": 0.0,
+      "recall10": 0.0,
+      "mrr10": 0.0
+    },
+    {
+      "query_id": "PLAIN-761",
+      "ranked_ids": [
+        "MED-3795",
+        "MED-3800",
+        "MED-666",
+        "MED-3797",
+        "MED-3792",
+        "MED-3793",
+        "MED-3801",
+        "MED-3798",
+        "MED-1656",
+        "MED-4085"
+      ],
+      "wall_ms": 6535.016800000449,
+      "calls": 136,
+      "input_tokens": 1491129,
+      "cost_usd": 0.062627418,
+      "mean_call_ms": 450.21981176438095,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 1,
+      "recall5": 0.16666666666666666,
+      "recall10": 0.3333333333333333,
+      "mrr10": 0.3333333333333333
+    },
+    {
+      "query_id": "PLAIN-3131",
+      "ranked_ids": [
+        "MED-861",
+        "MED-5010",
+        "MED-1454",
+        "MED-1378",
+        "MED-4620",
+        "MED-1700",
+        "MED-1795",
+        "MED-4618",
+        "MED-2311",
+        "MED-1846"
+      ],
+      "wall_ms": 5900.110299997323,
+      "calls": 136,
+      "input_tokens": 1508481,
+      "cost_usd": 0.063356202,
+      "mean_call_ms": 407.6800080878563,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 1,
+      "recall5": 0.16666666666666666,
+      "recall10": 0.3333333333333333,
+      "mrr10": 0.2
+    },
+    {
+      "query_id": "PLAIN-1141",
+      "ranked_ids": [
+        "MED-1343",
+        "MED-745",
+        "MED-1987",
+        "MED-3953",
+        "MED-2112",
+        "MED-3658",
+        "MED-3990",
+        "MED-1878",
+        "MED-1398",
+        "MED-4840"
+      ],
+      "wall_ms": 5996.280999999726,
+      "calls": 136,
+      "input_tokens": 1483643,
+      "cost_usd": 0.062313006000000004,
+      "mean_call_ms": 442.09115661787484,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 1,
+      "recall5": 0.0625,
+      "recall10": 0.0625,
+      "mrr10": 0.2
+    },
+    {
+      "query_id": "PLAIN-1203",
+      "ranked_ids": [
+        "MED-4771",
+        "MED-980",
+        "MED-4872",
+        "MED-2762",
+        "MED-1203",
+        "MED-4600",
+        "MED-986",
+        "MED-3275",
+        "MED-994",
+        "MED-850"
+      ],
+      "wall_ms": 6208.481500005291,
+      "calls": 136,
+      "input_tokens": 1493459,
+      "cost_usd": 0.06272527800000001,
+      "mean_call_ms": 432.18912205889757,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.16666666666666666,
+      "recall10": 0.16666666666666666,
+      "mrr10": 1.0
+    },
+    {
+      "query_id": "PLAIN-344",
+      "ranked_ids": [
+        "MED-2394",
+        "MED-2396",
+        "MED-2395",
+        "MED-2388",
+        "MED-2405",
+        "MED-2389",
+        "MED-5238",
+        "MED-2397",
+        "MED-1962",
+        "MED-4732"
+      ],
+      "wall_ms": 6019.992199995613,
+      "calls": 136,
+      "input_tokens": 1503159,
+      "cost_usd": 0.063132678,
+      "mean_call_ms": 421.4974757350694,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.06557377049180328,
+      "recall10": 0.09836065573770492,
+      "mrr10": 1.0
+    },
+    {
+      "query_id": "PLAIN-143",
+      "ranked_ids": [
+        "MED-3621",
+        "MED-3619",
+        "MED-3618",
+        "MED-2247",
+        "MED-3146",
+        "MED-3590",
+        "MED-3624",
+        "MED-3625",
+        "MED-3623",
+        "MED-3577"
+      ],
+      "wall_ms": 5860.764199998812,
+      "calls": 136,
+      "input_tokens": 1490586,
+      "cost_usd": 0.062604612,
+      "mean_call_ms": 404.79590588213745,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.058823529411764705,
+      "recall10": 0.11764705882352941,
+      "mrr10": 1.0
+    },
+    {
+      "query_id": "PLAIN-1887",
+      "ranked_ids": [
+        "MED-4914",
+        "MED-902",
+        "MED-2327",
+        "MED-5021",
+        "MED-1285",
+        "MED-943",
+        "MED-3809",
+        "MED-3488",
+        "MED-3806",
+        "MED-4913"
+      ],
+      "wall_ms": 5931.203899999673,
+      "calls": 136,
+      "input_tokens": 1477568,
+      "cost_usd": 0.062057856,
+      "mean_call_ms": 416.99473676480386,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 0,
+      "hit5": 0,
+      "recall5": 0.0,
+      "recall10": 0.0,
+      "mrr10": 0.0
+    },
+    {
+      "query_id": "PLAIN-913",
+      "ranked_ids": [
+        "MED-4415",
+        "MED-4416",
+        "MED-4418",
+        "MED-4417",
+        "MED-3811",
+        "MED-5084",
+        "MED-3812",
+        "MED-2780",
+        "MED-1442",
+        "MED-894"
+      ],
+      "wall_ms": 9697.436299997207,
+      "calls": 136,
+      "input_tokens": 1488612,
+      "cost_usd": 0.062521704,
+      "mean_call_ms": 621.3194904412376,
+      "resolved_models": [
+        "jev-1.13.0"
+      ],
+      "candidate_recall": 1.0,
+      "hit1": 1,
+      "hit5": 1,
+      "recall5": 0.14705882352941177,
+      "recall10": 0.20588235294117646,
+      "mrr10": 1.0
+    }
+  ]
+}
