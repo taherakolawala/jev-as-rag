@@ -1,0 +1,6 @@
+data/
+results/raw/
+.cache/
+__pycache__/
+*.key
+.env
