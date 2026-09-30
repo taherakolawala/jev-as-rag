@@ -106,6 +106,7 @@ def main():
     p.add_argument("--keep", type=int, default=5)
     p.add_argument("--workers", type=int, default=12)
     p.add_argument("--seed", type=int, default=20260930)
+    p.add_argument("--query-seed", type=int, default=20260930)
     p.add_argument("--max-cost", type=float, default=5.0)
     p.add_argument("--candidate-source", choices=("all", "bm25"), default="all")
     p.add_argument("--candidate-k", type=int, default=100)
@@ -118,7 +119,7 @@ def main():
     docs_list, queries, qrels = load_data(a.data)
     docs = {d["_id"]: d for d in docs_list}
     ids = list(docs)
-    selected = random.Random(a.seed).sample(sorted(qrels), min(a.queries, len(qrels)))
+    selected = random.Random(a.query_seed).sample(sorted(qrels), min(a.queries, len(qrels)))
     bm25_candidates = None
     if a.candidate_source == "bm25":
         texts = [(d.get("title", "") + " " + d.get("text", "")).strip() for d in docs_list]
@@ -129,9 +130,10 @@ def main():
         bm25_candidates = {qid: [ids[j] for j in np.argsort(-scorer(i), kind="stable")[:a.candidate_k]]
                            for i, qid in enumerate(selected)}
     client = JevClient(key, a.max_cost)
-    result = {"config": {"dataset": "BEIR SciFact test", "model": "jev-1.13.0",
+    result = {"config": {"dataset": f"BEIR {Path(a.data).name} test", "model": "jev-1.13.0",
               "query_ids": selected, "group_size": a.group_size, "keep": a.keep,
-              "workers": a.workers, "seed": a.seed, "candidate_source": a.candidate_source,
+              "workers": a.workers, "seed": a.seed, "query_seed": a.query_seed,
+              "candidate_source": a.candidate_source,
               "candidate_k": a.candidate_k if bm25_candidates else len(ids)}, "per_query": []}
     dest = Path(a.output)
     dest.parent.mkdir(parents=True, exist_ok=True)

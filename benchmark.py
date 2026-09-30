@@ -129,7 +129,7 @@ def main():
         summary[method] = {k: round(float(np.mean([r[k] for r in rows])), 6)
                            for k in ("hit1", "hit5", "recall5", "recall10", "mrr10", "latency_ms")}
         summary[method]["p95_latency_ms"] = round(float(np.percentile([r["latency_ms"] for r in rows], 95)), 6)
-    output = {"dataset": "BEIR SciFact test", "documents": len(docs), "queries": len(queryids),
+    output = {"dataset": f"BEIR {Path(a.data).name} test", "documents": len(docs), "queries": len(queryids),
               "indexing_seconds": indexing, "summary": summary, "per_query": records}
     path = Path(a.output)
     path.parent.mkdir(parents=True, exist_ok=True)
