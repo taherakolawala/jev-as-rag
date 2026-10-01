@@ -1,5 +1,7 @@
 # Jev tournament retrieval pilot — 30 September 2026
 
+**Research audit, 1 October 2026:** These are exploratory results, not a completed paper evaluation. The NFCorpus run reused a claim-verification prompt; Choice probabilities were used as a top-five ranking without validating that interpretation; latency boundaries differ across methods; and failed calls are incompletely accounted for. See `RESEARCH_PROTOCOL.md` for the limitations and required follow-up. The new `graded_audit.json` re-evaluates the saved rankings without new model calls: on the 20 SciFact queries, full Jev Hit@10 was 20/20 versus 18/20 for BM25→Jev. This suggests potential recall gains that Hit@5 alone did not reveal, but does not establish a general advantage.
+
 ## Question and setup
 
 Can Jev retrieve from an entire corpus by repeatedly eliminating documents in bounded groups, without a separate first-stage retriever? We tested TypeSafe `jev-1.13.0` on two BEIR test collections: SciFact (5,183 abstracts) and NFCorpus (3,633 documents). The Jev sample is 20 randomly selected labeled queries per collection. BM25 and TF-IDF were also evaluated on every labeled query (300 SciFact, 323 NFCorpus), but the tables below compare the **same 20 queries** as the Jev runs.

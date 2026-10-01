@@ -2,6 +2,8 @@
 
 Reproducible experiments on whether a round-based Jev tournament can retrieve relevant documents from a corpus without a first-stage search index.
 
+**Status:** Exploratory pilot. Read [the research audit and next-stage protocol](RESEARCH_PROTOCOL.md) before citing results. The current study is not yet sufficient for a general claim about replacing retrieval. `python audit_results.py` rechecks published rankings against the local graded qrels without making model calls.
+
 ## Design
 
 For each query, randomly partition the entire corpus into groups of 32 documents. Each Jev `Choice` call sees the query and the title plus the first 1,600 characters of each abstract as its options. Retain the five highest-probability documents from each group, regroup, and repeat until a final group produces the ranking. The documented `Choice` output includes a probability for every option, allowing more than one survivor per group. This experiment also tests a one-survivor variant and alternate random groupings.
